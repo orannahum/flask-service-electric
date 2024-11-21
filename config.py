@@ -1,0 +1,1 @@
+price_of_kWh = 0.6145
