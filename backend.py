@@ -4,7 +4,7 @@ from functions import apply_discount, read_df_all_and_df
 import json
 from config import price_of_kWh
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='public')
 app.config['SECRET_KEY'] = 'your_secret_key'
 
 # Load plans configuration
