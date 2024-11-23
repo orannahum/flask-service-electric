@@ -1,14 +1,14 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "public",  // Path to your static files (HTML, CSS, JS)
     "rewrites": [
       {
-        "source": "**",
-        "function": "firebase_app"
+        "source": "**",  // All requests are routed to the Firebase function
+        "function": "firebase_app"  // Reference to the function defined in backend.py
       }
     ]
   },
   "functions": {
-    "source": "functions"
+    "source": "functions"  // Directory where backend.py resides
   }
 }

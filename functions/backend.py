@@ -3,6 +3,7 @@ import pandas as pd
 from functions import apply_discount, read_df_all_and_df
 import json
 from config import price_of_kWh
+import firebase_functions as functions
 
 app = Flask(__name__, template_folder='templates', static_folder='public')
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -51,7 +52,7 @@ def upload_file():
     # Process the data and get results
     try:
         results_dict = {}
-        ## prie of price_of_kWh
+        ## price of price_of_kWh
         results_dict["price_of_kWh"] = price_of_kWh
         ## add client info to results
         results_dict["client_info"] = client_info
@@ -90,6 +91,9 @@ def upload_file():
 
     # Return results rendered in the template
     return render_template('index.html', results=results_dict)
+
+# Export the Flask app as a Firebase function
+firebase_app = functions.http.on_request(app)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5002, debug=True)
