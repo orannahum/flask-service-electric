@@ -1,11 +1,14 @@
 {
   "hosting": {
-    "public": "public", 
+    "public": "public",
     "rewrites": [
       {
-        "source": "/**",
-        "function": "app"
+        "source": "**",
+        "function": "firebase_app"
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
   }
 }
