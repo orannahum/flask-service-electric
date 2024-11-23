@@ -7,7 +7,7 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "firebase_app" 
+        "function": "app" 
       }
     ]
   }
