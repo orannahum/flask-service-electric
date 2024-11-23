@@ -269,8 +269,6 @@ def upload_file():
     # Return results rendered in the template
     return render_template('index.html', results=results_dict)
 
-# Export the Flask app as a Firebase function
-firebase_app = functions.http.on_request(app)
 
 if __name__ == "__main__":
     app.run(debug=True)
